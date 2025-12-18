@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>[##_page_title_##]</title>
+  <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+<s_t3>
+  <div class="layout">
+    <!-- Left Sidebar -->
+    <aside class="sidebar" aria-label="Primary">
+      <div class="sidebar__brand">
+        <a class="brand__avatar" href="/" aria-label="Home">
+          <!-- 이미지 쓰고 싶으면: ./images/avatar.png 올려두고 아래 img로 교체 -->
+          <span class="brand__avatarPlaceholder" aria-hidden="true"></span>
+        </a>
+        <div class="brand__text">
+          <a class="brand__title" href="/">[##_title_##]</a>
+          <div class="brand__subtitle">Tech notes & tools</div>
+        </div>
+      </div>
+
+      <nav class="sidebar__nav">
+        <a class="nav__item" href="/">HOME</a>
+        <a class="nav__item" href="/category">CATEGORIES</a>
+        <a class="nav__item" href="/guestbook">GUESTBOOK</a>
+      </nav>
+
+      <div class="sidebar__footer">
+        <a class="footer__link" href="[##_rss_url_##]" target="_blank" rel="noopener">RSS</a>
+        <a class="footer__link" href="/manage" target="_blank" rel="noopener">ADMIN</a>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="topbar">
+        <button class="topbar__menuBtn" type="button" data-action="toggle-sidebar" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="topbar__title">[##_page_title_##]</div>
+      </header>
+
+      <div class="content">
+        <!-- Notice (optional) -->
+        <s_notice_rep>
+          <article class="noticeCard">
+            <h2 class="noticeCard__title"><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a></h2>
+            <div class="noticeCard__meta">공지 · [##_notice_rep_date_##]</div>
+            <div class="noticeCard__body">[##_notice_rep_desc_##]</div>
+          </article>
+        </s_notice_rep>
+
+        <!-- Post / List -->
+        <s_article_rep>
+
+          <!-- Index/List cards -->
+          <s_index_article_rep>
+            <article class="postCard">
+              <div class="postCard__meta">
+                <a class="postCard__cat" href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a>
+                <span class="postCard__date">[##_article_rep_simple_date_##]</span>
+              </div>
+
+              <h2 class="postCard__title">
+                <a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a>
+              </h2>
+
+              <p class="postCard__excerpt">[##_article_rep_summary_##]</p>
+            </article>
+          </s_index_article_rep>
+
+          <!-- Permalink / Single post -->
+          <s_permalink_article_rep>
+            <article class="post">
+              <div class="post__meta">
+                <a class="post__cat" href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a>
+                <span class="post__date">[##_article_rep_date_##]</span>
+              </div>
+
+              <h1 class="post__title">[##_article_rep_title_##]</h1>
+
+              <div id="post-content" class="post__content">
+                [##_article_rep_desc_##]
+              </div>
+
+              <s_tag_label>
+                <div class="post__tags">
+                  <span class="tags__label">TAGS</span>
+                  <span class="tags__items">[##_tag_label_rep_##]</span>
+                </div>
+              </s_tag_label>
+
+              <!-- Comments -->
+              <s_rp>
+                <section class="comment">
+                  <h3 class="comment__title">댓글</h3>
+
+                  <div class="comment__list">
+                    <s_rp_container>
+                      <ol class="commentList">
+                        <s_rp_rep>
+                          <li class="commentItem" id="[##_rp_rep_id_##]">
+                            <div class="commentItem__head">
+                              <span class="commentItem__name">[##_rp_rep_name_##]</span>
+                              <span class="commentItem__date">[##_rp_rep_date_##]</span>
+                            </div>
+                            <div class="commentItem__body">[##_rp_rep_desc_##]</div>
+
+                            <s_rp2_container>
+                              <ul class="commentReplyList">
+                                <s_rp2_rep>
+                                  <li class="commentReplyItem" id="[##_rp_rep_id_##]">
+                                    <div class="commentItem__head">
+                                      <span class="commentItem__name">[##_rp_rep_name_##]</span>
+                                      <span class="commentItem__date">[##_rp_rep_date_##]</span>
+                                    </div>
+                                    <div class="commentItem__body">[##_rp_rep_desc_##]</div>
+                                  </li>
+                                </s_rp2_rep>
+                              </ul>
+                            </s_rp2_container>
+                          </li>
+                        </s_rp_rep>
+                      </ol>
+                    </s_rp_container>
+                  </div>
+
+                  <s_rp_input_form>
+                    <div class="comment__write">
+                      <s_rp_member>
+                        <s_rp_guest>
+                          <div class="commentForm__row">
+                            <input class="input" type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" placeholder="이름" />
+                            <input class="input" type="password" name="[##_rp_input_password_##]" placeholder="비밀번호" />
+                          </div>
+                          <div class="commentForm__row">
+                            <input class="input" type="text" name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]" placeholder="홈페이지(선택)" />
+                          </div>
+                        </s_rp_guest>
+                        <label class="commentForm__secret">
+                          <input type="checkbox" name="[##_rp_input_is_secret_##]" />
+                          비밀글
+                        </label>
+                      </s_rp_member>
+
+                      <textarea class="textarea" name="[##_rp_input_comment_##]" rows="6" placeholder="댓글을 남겨주세요"></textarea>
+                      <button class="btn" type="submit" onclick="[##_rp_onclick_submit_##]">댓글 달기</button>
+                    </div>
+                  </s_rp_input_form>
+                </section>
+              </s_rp>
+
+              <!-- Profile box kill-hook (CSS로 숨길 타겟 잡기용) -->
+              <div id="post-bottom-killhook"></div>
+            </article>
+          </s_permalink_article_rep>
+
+        </s_article_rep>
+
+        <!-- Guestbook -->
+        <s_guest>
+          <section class="guestbook">
+            <h1 class="guestbook__title">방명록</h1>
+
+            <s_guest_input_form>
+              <div class="guestForm">
+                <s_guest_member>
+                  <s_guest_form>
+                    <div class="guestForm__row">
+                      <input class="input" type="text" name="[##_guest_input_name_##]" value="[##_guest_name_##]" placeholder="이름" />
+                      <input class="input" type="password" name="[##_guest_input_password_##]" placeholder="비밀번호" />
+                    </div>
+                    <div class="guestForm__row">
+                      <input class="input" type="text" name="[##_guest_input_homepage_##]" value="[##_guest_homepage_##]" placeholder="홈페이지(선택)" />
+                    </div>
+                  </s_guest_form>
+                </s_guest_member>
+
+                <textarea class="textarea" name="[##_guest_input_comment_##]" rows="6" placeholder="방명록을 남겨주세요"></textarea>
+                <button class="btn" type="submit" onclick="[##_guest_onclick_submit_##]">남기기</button>
+              </div>
+            </s_guest_input_form>
+
+            <s_guest_container>
+              <ol class="guestList">
+                <s_guest_rep>
+                  <li class="guestItem" id="[##_guest_rep_id_##]">
+                    <div class="guestItem__head">
+                      <span class="guestItem__name">[##_guest_rep_name_##]</span>
+                      <span class="guestItem__date">[##_guest_rep_date_##]</span>
+                    </div>
+                    <div class="guestItem__body">[##_guest_rep_desc_##]</div>
+                  </li>
+                </s_guest_rep>
+              </ol>
+            </s_guest_container>
+          </section>
+        </s_guest>
+
+        <!-- Paging -->
+        <s_paging>
+          <nav class="paging" aria-label="Paging">
+            <a class="paging__btn" href="[##_prev_page_##]">← Prev</a>
+            <span class="paging__num">[##_paging_current_##] / [##_paging_total_##]</span>
+            <a class="paging__btn" href="[##_next_page_##]">Next →</a>
+          </nav>
+        </s_paging>
+
+      </div>
+    </main>
+
+    <!-- Right Aside -->
+    <aside class="aside" aria-label="Secondary">
+      <section id="widget-recent" class="widget">
+        <h3 class="widget__title">Recently Updated</h3>
+        <div class="widget__body">
+          <ul id="recent-list" class="recentList">
+            <li class="recentList__loading">불러오는 중…</li>
+          </ul>
+        </div>
+      </section>
+
+      <nav id="toc" class="toc" hidden>
+        <h3 class="toc__title">Contents</h3>
+        <div id="toc-body" class="toc__body"></div>
+      </nav>
+    </aside>
+
+    <div class="overlay" data-action="toggle-sidebar" aria-hidden="true"></div>
+  </div>
+
+  <script src="./images/lumora_v1.js"></script>
+</s_t3>
+</body>
+</html>
