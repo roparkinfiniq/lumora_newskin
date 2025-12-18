@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>[##_page_title_##]</title>
   <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]" />
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <aside class="sidebar" aria-label="Primary">
       <div class="sidebar__brand">
         <a class="brand__avatar" href="/" aria-label="Home">
-          <!-- 이미지 쓰고 싶으면: ./images/avatar.png 올려두고 아래 img로 교체 -->
+          <!-- Replace with your image: ./images/avatar.png -->
           <span class="brand__avatarPlaceholder" aria-hidden="true"></span>
         </a>
         <div class="brand__text">
@@ -27,6 +27,8 @@
       <nav class="sidebar__nav">
         <a class="nav__item" href="/">HOME</a>
         <a class="nav__item" href="/category">CATEGORIES</a>
+        <a class="nav__item" href="/tag">TAGS</a>
+        <a class="nav__item" href="/archive">ARCHIVES</a>
         <a class="nav__item" href="/guestbook">GUESTBOOK</a>
       </nav>
 
@@ -50,7 +52,7 @@
         <s_notice_rep>
           <article class="noticeCard">
             <h2 class="noticeCard__title"><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a></h2>
-            <div class="noticeCard__meta">공지 · [##_notice_rep_date_##]</div>
+            <div class="noticeCard__meta">Notice - [##_notice_rep_date_##]</div>
             <div class="noticeCard__body">[##_notice_rep_desc_##]</div>
           </article>
         </s_notice_rep>
@@ -98,7 +100,7 @@
               <!-- Comments -->
               <s_rp>
                 <section class="comment">
-                  <h3 class="comment__title">댓글</h3>
+                  <h3 class="comment__title">Comments</h3>
 
                   <div class="comment__list">
                     <s_rp_container>
@@ -135,27 +137,27 @@
                       <s_rp_member>
                         <s_rp_guest>
                           <div class="commentForm__row">
-                            <input class="input" type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" placeholder="이름" />
-                            <input class="input" type="password" name="[##_rp_input_password_##]" placeholder="비밀번호" />
+                            <input class="input" type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" placeholder="Name" />
+                            <input class="input" type="password" name="[##_rp_input_password_##]" placeholder="Password" />
                           </div>
                           <div class="commentForm__row">
-                            <input class="input" type="text" name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]" placeholder="홈페이지(선택)" />
+                            <input class="input" type="text" name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]" placeholder="Homepage (optional)" />
                           </div>
                         </s_rp_guest>
                         <label class="commentForm__secret">
                           <input type="checkbox" name="[##_rp_input_is_secret_##]" />
-                          비밀글
+                          Secret
                         </label>
                       </s_rp_member>
 
-                      <textarea class="textarea" name="[##_rp_input_comment_##]" rows="6" placeholder="댓글을 남겨주세요"></textarea>
-                      <button class="btn" type="submit" onclick="[##_rp_onclick_submit_##]">댓글 달기</button>
+                      <textarea class="textarea" name="[##_rp_input_comment_##]" rows="6" placeholder="Leave a comment"></textarea>
+                      <button class="btn" type="submit" onclick="[##_rp_onclick_submit_##]">Post comment</button>
                     </div>
                   </s_rp_input_form>
                 </section>
               </s_rp>
 
-              <!-- Profile box kill-hook (CSS로 숨길 타겟 잡기용) -->
+              <!-- Profile box kill-hook (use for hiding default blocks via CSS) -->
               <div id="post-bottom-killhook"></div>
             </article>
           </s_permalink_article_rep>
@@ -165,24 +167,24 @@
         <!-- Guestbook -->
         <s_guest>
           <section class="guestbook">
-            <h1 class="guestbook__title">방명록</h1>
+            <h1 class="guestbook__title">Guestbook</h1>
 
             <s_guest_input_form>
               <div class="guestForm">
                 <s_guest_member>
                   <s_guest_form>
                     <div class="guestForm__row">
-                      <input class="input" type="text" name="[##_guest_input_name_##]" value="[##_guest_name_##]" placeholder="이름" />
-                      <input class="input" type="password" name="[##_guest_input_password_##]" placeholder="비밀번호" />
+                      <input class="input" type="text" name="[##_guest_input_name_##]" value="[##_guest_name_##]" placeholder="Name" />
+                      <input class="input" type="password" name="[##_guest_input_password_##]" placeholder="Password" />
                     </div>
                     <div class="guestForm__row">
-                      <input class="input" type="text" name="[##_guest_input_homepage_##]" value="[##_guest_homepage_##]" placeholder="홈페이지(선택)" />
+                      <input class="input" type="text" name="[##_guest_input_homepage_##]" value="[##_guest_homepage_##]" placeholder="Homepage (optional)" />
                     </div>
                   </s_guest_form>
                 </s_guest_member>
 
-                <textarea class="textarea" name="[##_guest_input_comment_##]" rows="6" placeholder="방명록을 남겨주세요"></textarea>
-                <button class="btn" type="submit" onclick="[##_guest_onclick_submit_##]">남기기</button>
+                <textarea class="textarea" name="[##_guest_input_comment_##]" rows="6" placeholder="Leave a message"></textarea>
+                <button class="btn" type="submit" onclick="[##_guest_onclick_submit_##]">Submit</button>
               </div>
             </s_guest_input_form>
 
@@ -205,9 +207,9 @@
         <!-- Paging -->
         <s_paging>
           <nav class="paging" aria-label="Paging">
-            <a class="paging__btn" href="[##_prev_page_##]">← Prev</a>
+            <a class="paging__btn" href="[##_prev_page_##]">Prev</a>
             <span class="paging__num">[##_paging_current_##] / [##_paging_total_##]</span>
-            <a class="paging__btn" href="[##_next_page_##]">Next →</a>
+            <a class="paging__btn" href="[##_next_page_##]">Next</a>
           </nav>
         </s_paging>
 
@@ -220,7 +222,7 @@
         <h3 class="widget__title">Recently Updated</h3>
         <div class="widget__body">
           <ul id="recent-list" class="recentList">
-            <li class="recentList__loading">불러오는 중…</li>
+            <li class="recentList__loading">Loading...</li>
           </ul>
         </div>
       </section>
@@ -234,7 +236,7 @@
     <div class="overlay" data-action="toggle-sidebar" aria-hidden="true"></div>
   </div>
 
-  <script src="./images/lumora_v1.js"></script>
+  <script src="./assets/js/lumora_v2.js"></script>
 </s_t3>
 </body>
 </html>
